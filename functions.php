@@ -120,6 +120,12 @@ add_action( 'widgets_init', 'gbomotors_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gbomotors_scripts() {
+
+	$version = wp_get_theme()->get('Version');
+
+	wp_enqueue_style( 'gbomotors', get_template_directory_uri() . '/dist/style.css', array(), $version );
+	wp_enqueue_script('gbomotors', get_template_directory_uri() . '/dist/index.js', array(), $version, true);
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
