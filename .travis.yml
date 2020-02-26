@@ -1,0 +1,44 @@
+cache:
+  directories:
+    - node_modules
+
+language:
+  - php
+  - node_js
+os: linux
+version: ~> 1.0
+
+node_js:
+  - "10"
+
+php:
+  - 7.2
+
+allow_failures:
+  # Allow failures for unstable builds.
+  - php: "7.4snapshot"
+
+before_install:
+  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+
+  - npm install
+
+jobs:
+  include:
+    - php: 7.3
+      env: PHPCS=1
+    - stage: "Release"
+      name: Release build
+      if: branch = develop
+      script:
+        - node ./deploy/update-version.js
+        - npm run build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_OAUTH_TOKEN
+        target_branch: master
+        on:
+          branch: develop
+
+  fast_finish: true
