@@ -5,29 +5,19 @@ cache:
 language:
   - php
   - node_js
+
 os: linux
 version: ~> 1.0
 
 node_js:
-  - "10"
-
-php:
-  - 7.2
-
-allow_failures:
-  # Allow failures for unstable builds.
-  - php: "7.4snapshot"
+  - '10'
 
 before_install:
-  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
-
   - npm install
 
 jobs:
   include:
-    - php: 7.3
-      env: PHPCS=1
-    - stage: "Release"
+    - stage: 'Release'
       name: Release build
       if: branch = develop
       script:
