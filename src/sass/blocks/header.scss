@@ -1,0 +1,41 @@
+.header {
+	&__top {
+		display: flex;
+		align-items: center;
+		height: 38px;
+		background-color: #1e485b;
+	}
+
+	&__top-content {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__top-item {
+		text-decoration: none;
+		vertical-align: middle;
+		font-size: 15px;
+		line-height: 18px;
+		font-family: 'Proxima Nova';
+		letter-spacing: 0.45px;
+		color: #c1b899;
+
+		&:not(:last-of-type) {
+			margin-right: 30px;
+		}
+
+		.icon {
+			vertical-align: middle;
+		}
+
+		span {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			span {
+				text-decoration: none;
+			}
+		}
+	}
+}

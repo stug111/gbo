@@ -54,5 +54,8 @@
     "singleQuote": true,
     "endOfLine": "auto",
     "printWidth": 100
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1"
   }
 }
