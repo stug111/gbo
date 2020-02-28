@@ -1,3 +1,17 @@
+@font-face {
+  font-display: swap;
+  font-family: "ProximaNova";
+  font-weight: 400;
+  font-style: normal;
+  src: url(ProximaNova-Regular.woff) format("woff"); }
+
+@font-face {
+  font-display: swap;
+  font-family: "ProximaNova";
+  font-weight: 300;
+  font-style: normal;
+  src: url(ProximaNova-Light.woff) format("woff"); }
+
 /*!
  * Bootstrap Grid v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -2586,6 +2600,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  min-width: 375px;
   margin: 0; }
 
 .site-wrapper {
@@ -2602,13 +2617,12 @@ body {
   justify-content: flex-end; }
 
 .header__top-item {
-  text-decoration: none;
-  vertical-align: middle;
+  font-family: "ProximaNova", sans-serif;
   font-size: 15px;
-  line-height: 18px;
-  font-family: 'Proxima Nova';
-  letter-spacing: 0.45px;
-  color: #c1b899; }
+  line-height: 1.2;
+  font-weight: 300;
+  color: #c1b899;
+  text-decoration: none; }
   .header__top-item:not(:last-of-type) {
     margin-right: 30px; }
   .header__top-item .icon {
