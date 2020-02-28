@@ -16,6 +16,7 @@
 		"string-no-newline": true,
 		"color-hex-length": "long",
 		"color-no-invalid-hex": true,
+		"no-descending-specificity": null,
 		"at-rule-empty-line-before": [
 			"always",
 			{

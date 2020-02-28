@@ -2593,6 +2593,9 @@ html {
   .mx-xl-auto {
     margin-left: auto !important; } }
 
+* {
+  outline: none; }
+
 body,
 html {
   min-height: 100vh; }
@@ -2631,4 +2634,134 @@ body {
     text-decoration: underline; }
   .header__top-item:hover span {
     text-decoration: none; }
+
+.header__main {
+  background-color: #ffffff; }
+
+.header__main-container {
+  display: flex;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 11px; }
+
+.header__main-logo {
+  width: 191px;
+  height: 51px; }
+  @media (min-width: 992px) {
+    .header__main-logo {
+      width: auto;
+      height: auto; } }
+  .header__main-logo img {
+    max-width: 100%;
+    height: auto; }
+
+.header__main-call {
+  margin-left: auto;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 14px;
+  line-height: 1.21;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.42px;
+  cursor: pointer; }
+
+.header__main-burger {
+  margin-right: 28px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer; }
+
+.header__main-info {
+  margin-left: auto; }
+
+.header__main-info-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 16px; }
+
+.header__main-city {
+  margin-right: 83px;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.48px; }
+  .header__main-city .icon {
+    vertical-align: middle; }
+
+.header__main-contact {
+  display: flex;
+  flex-direction: column; }
+
+.header__main-phone {
+  font-family: "ProximaNova", sans-serif;
+  font-size: 19px;
+  line-height: 1.21;
+  font-weight: 300;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 0.57px; }
+  .header__main-phone .icon {
+    vertical-align: middle; }
+
+.header__main-phone-number {
+  position: relative;
+  z-index: 1; }
+  .header__main-phone-number::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #ffc400;
+    content: "";
+    transform: translateY(-2px); }
+  .header__main-phone-number span {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.72px; }
+
+@media (min-width: 992px) {
+  .header__main-menu .menu {
+    display: flex;
+    margin: 0;
+    list-style: none; }
+  .header__main-menu .menu-item {
+    position: relative;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 19px;
+    font-family: "ProximaNova", sans-serif;
+    font-size: 13px;
+    line-height: 1.24;
+    font-weight: 300;
+    letter-spacing: 0.51px;
+    text-transform: uppercase; } }
+  @media (min-width: 992px) and (min-width: 1200px) {
+    .header__main-menu .menu-item {
+      padding-right: 11px;
+      padding-left: 11px;
+      font-size: 17px; } }
+
+@media (min-width: 992px) {
+    .header__main-menu .menu-item.current-menu-item ::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 10px;
+      background-color: #ffc400;
+      content: ""; }
+    .header__main-menu .menu-item a {
+      color: #000000;
+      text-decoration: none; } }
 

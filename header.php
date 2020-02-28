@@ -35,20 +35,34 @@
 		<div class="header__main">
 			<div class="container">
 				<div class="header__main-container">
-					<div class="header__main-container-logo">
+					<button class="header__main-burger d-lg-none" type="button">
+						<svg xmlns="http://www.w3.org/2000/svg" width="33" height="24" viewBox="0 0 33 24"><g data-name="Group 12" fill="none" stroke="#1e485b" stroke-linecap="round" stroke-width="4"><path data-name="Line 67" d="M2 2h29"/><path data-name="Line 68" d="M2 12h29"/><path data-name="Line 69" d="M2 22h29"/></g></svg>
+					</button>
+					<div class="header__main-logo">
 						<?php the_custom_logo(); ?>
 					</div>
-					<div class="header__main-container-info">
-						<span class="header__main-city">
-							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path d="M103.257,239.857C103,239.755,97,237.282,97,231a7,7,0,1,1,14,0c0,6.282-6,8.754-6.257,8.857a2,2,0,0,1-1.486,0ZM99,231c0,5,5,7,5,7s5-2,5-7a5,5,0,1,0-10,0Zm2,0a3,3,0,1,1,3,3A3,3,0,0,1,101,231Zm2,0a1,1,0,1,0,1-1A1,1,0,0,0,103,231Z" transform="translate(-97 -224)"/></svg>
-							Чебоксары, Базовый пр., 6
-						</span>
-						<a href="tel:+78352608848" class="header__main-city">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16.003" height="16" viewBox="0 0 16.003 16"><path d="M687.9,651.63l-.77,2.32a2,2,0,0,1-1.086,1.2,10.008,10.008,0,0,1-10.763-1.742c-.127-.114-.242-.228-.34-.326a9.5,9.5,0,0,1-1.5-1.9,8.069,8.069,0,0,1-.388-.721,9.987,9.987,0,0,1-.2-8.5,2.006,2.006,0,0,1,1.2-1.086l2.321-.77a2,2,0,0,1,2.528,1.266l1,3a2,2,0,0,1-1,2.421l-.728.364a3.962,3.962,0,0,0,1.014,1.68,3.911,3.911,0,0,0,1.667,1l.364-.727a2,2,0,0,1,2.422-1l3,1A2,2,0,0,1,687.9,651.63ZM686,651l-3-1-1,2a6.009,6.009,0,0,1-6-6l2-1-1-3-2.321.77A7.92,7.92,0,0,0,674,646a7.84,7.84,0,0,0,.85,3.58,6.032,6.032,0,0,0,.3.56,7.549,7.549,0,0,0,1.191,1.51c.09.09.18.18.28.27a8,8,0,0,0,8.611,1.4Z" transform="translate(-671.997 -640)"/></svg>
-							+7 8352 <span>608-848</span>
-						</a>
+					<button class="header__main-call d-lg-none">
+						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g data-name="Group 25"><path d="M25.898 21.626l-.77 2.319a2 2 0 0 1-1.086 1.2 10.006 10.006 0 0 1-10.761-1.741 8.658 8.658 0 0 1-.34-.326 9.507 9.507 0 0 1-1.5-1.9 8.072 8.072 0 0 1-.388-.721 9.983 9.983 0 0 1-.2-8.5 2 2 0 0 1 1.2-1.086l2.32-.77a2 2 0 0 1 2.528 1.266l1 3a2 2 0 0 1-1 2.42l-.728.364a3.962 3.962 0 0 0 1.014 1.679 3.909 3.909 0 0 0 1.667 1l.364-.727a2 2 0 0 1 2.421-1l3 1a2 2 0 0 1 1.259 2.523zM24.003 21l-3-1-1 2a6.007 6.007 0 0 1-6-6l2-1-1-3-2.32.77a7.917 7.917 0 0 0-.68 3.23 7.836 7.836 0 0 0 .85 3.579 6.013 6.013 0 0 0 .3.56 7.549 7.549 0 0 0 1.191 1.51c.09.09.18.18.28.27a8 8 0 0 0 8.609 1.4z" fill="#1e485b"/><g data-name="Ellipse 9" fill="none" stroke="#1e485b" stroke-width="2"><circle cx="18" cy="18" r="18" stroke="none"/><circle cx="18" cy="18" r="17"/></g></g></svg>
+					</button>
+					<div class="header__main-info d-none d-lg-block">
+						<div class="header__main-info-top">
+							<span class="header__main-city">
+								<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path d="M103.257,239.857C103,239.755,97,237.282,97,231a7,7,0,1,1,14,0c0,6.282-6,8.754-6.257,8.857a2,2,0,0,1-1.486,0ZM99,231c0,5,5,7,5,7s5-2,5-7a5,5,0,1,0-10,0Zm2,0a3,3,0,1,1,3,3A3,3,0,0,1,101,231Zm2,0a1,1,0,1,0,1-1A1,1,0,0,0,103,231Z" transform="translate(-97 -224)"/></svg>
+								— Чебоксары, Базовый пр., 6
+							</span>
+							<div class="header__main-contact">
+								<a href="tel:+78352608848" class="header__main-phone">
+									<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16.003" height="16" viewBox="0 0 16.003 16"><path d="M687.9,651.63l-.77,2.32a2,2,0,0,1-1.086,1.2,10.008,10.008,0,0,1-10.763-1.742c-.127-.114-.242-.228-.34-.326a9.5,9.5,0,0,1-1.5-1.9,8.069,8.069,0,0,1-.388-.721,9.987,9.987,0,0,1-.2-8.5,2.006,2.006,0,0,1,1.2-1.086l2.321-.77a2,2,0,0,1,2.528,1.266l1,3a2,2,0,0,1-1,2.421l-.728.364a3.962,3.962,0,0,0,1.014,1.68,3.911,3.911,0,0,0,1.667,1l.364-.727a2,2,0,0,1,2.422-1l3,1A2,2,0,0,1,687.9,651.63ZM686,651l-3-1-1,2a6.009,6.009,0,0,1-6-6l2-1-1-3-2.321.77A7.92,7.92,0,0,0,674,646a7.84,7.84,0,0,0,.85,3.58,6.032,6.032,0,0,0,.3.56,7.549,7.549,0,0,0,1.191,1.51c.09.09.18.18.28.27a8,8,0,0,0,8.611,1.4Z" transform="translate(-671.997 -640)"/></svg>
+									—
+									<span class="header__main-phone-number">+7 8352 <span>608-848</span></span>
+								</a>
+								<button class="header__main-call">Заказать звонок</button>
+							</div>
+						</div>
 						<?php wp_nav_menu(array(
-							'theme_location' => 'primary'
+							'theme_location' 	=> 'primary',
+							'container_class' 	=> 'header__main-menu',
+							'depth'           	=> 1,
 						)) ?>
 					</div>
 				</div>
