@@ -23,10 +23,6 @@ jobs:
       script:
         - node ./deploy/update-version.js
         - npm run build
-      after_script:
-        - git config --global user.email "travis@travis-ci.org"
-        - git config --global user.name "Travis CI"
-        - git add --all
       deploy:
         provider: pages
         skip_cleanup: false
@@ -34,5 +30,9 @@ jobs:
         target_branch: master
         on:
           branch: develop
+      after_deploy:
+        - git config --global user.email "travis@travis-ci.org"
+        - git config --global user.name "Travis CI"
+        - git commit -a
 
   fast_finish: true
