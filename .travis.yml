@@ -34,6 +34,6 @@ jobs:
         - git config --global user.email "travis@travis-ci.org"
         - git config --global user.name "Travis CI"
         - git add --all
-        - git commit --message " Update docs via build $TRAVIS_BUILD_NUMBER"
+        - git commit -m "Update docs via build $TRAVIS_BUILD_NUMBER"
 
   fast_finish: true
