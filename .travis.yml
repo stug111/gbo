@@ -21,6 +21,7 @@ jobs:
       name: Release build
       if: branch = develop
       script:
+        - node ./deploy/update-version.js
         - npm run build
       deploy:
         provider: pages
