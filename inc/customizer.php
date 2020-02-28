@@ -53,3 +53,76 @@ function gbomotors_customize_preview_js() {
 	wp_enqueue_script( 'gbomotors-customizer', get_template_directory_uri() . '/src/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'gbomotors_customize_preview_js' );
+
+add_action('customize_register', function($customizer) {
+	$customizer->add_section(
+		'settings-site', array(
+			'title'         => __( 'Настройки темы', 'gbomotors' ),
+			'description'   => __( 'Контактная информация на сайте', 'gbomotors'),
+			'priority'      => 11,
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_phone_number', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_phone_number',
+		array(
+			'label'     => __('Номер телефона', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_address', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_address',
+		array(
+			'label'     => __('Адрес', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_write_us', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_write_us',
+		array(
+			'label'     => __('Напишите нам', 'gbomotors'),
+			'description' => __('Укажите ссылку на страницу', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_sertificat', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_sertificat',
+		array(
+			'label'     => __('Наши сертификаты', 'gbomotors'),
+			'description' => __('Укажите ссылку на страницу', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_map', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_map',
+		array(
+			'label'     => __('Карта заправок', 'gbomotors'),
+			'description' => __('Укажите ссылку на страницу', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+});
