@@ -33,7 +33,6 @@ jobs:
       after_deploy:
         - git config --global user.email "travis@travis-ci.org"
         - git config --global user.name "Travis CI"
-        - git commit -a
         - git add --all
         - 'git commit --message "📝 Update docs via build $TRAVIS_BUILD_NUMBER"'
         - git push "https://${GITHUB_OAUTH_TOKEN}@github.com/stug111/gbomotors.git" master
