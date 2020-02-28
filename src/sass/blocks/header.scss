@@ -12,13 +12,13 @@
 	}
 
 	&__top-item {
-		text-decoration: none;
-		vertical-align: middle;
+		font-family: 'Proxima Nova', sans-serif;
 		font-size: 15px;
 		line-height: 18px;
-		font-family: 'Proxima Nova';
-		letter-spacing: 0.45px;
 		color: #c1b899;
+		vertical-align: middle;
+		text-decoration: none;
+		letter-spacing: 0.45px;
 
 		&:not(:last-of-type) {
 			margin-right: 30px;
