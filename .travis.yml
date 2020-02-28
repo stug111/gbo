@@ -25,15 +25,10 @@ jobs:
         - npm run build
       deploy:
         provider: pages
-        skip_cleanup: false
+        skip_cleanup: true
         github_token: $GITHUB_OAUTH_TOKEN
         target_branch: master
         on:
           branch: develop
-      after_deploy:
-        - git config --global user.email "travis@travis-ci.org"
-        - git config --global user.name "Travis CI"
-        - git add --all
-        - git commit -m "Update docs via build $TRAVIS_BUILD_NUMBER"
 
   fast_finish: true
