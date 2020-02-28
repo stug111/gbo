@@ -1,6 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = {
 	entry: {
@@ -48,5 +49,10 @@ module.exports = {
 			ignoreOrder: false,
 		}),
 		new IgnoreEmitPlugin(['style.js', 'editor-style.js', 'woocommerce.js']),
+		new BrowserSyncPlugin({
+			host: 'localhost',
+			port: 3000,
+			proxy: 'http://localhost:8080/',
+		}),
 	],
 }
