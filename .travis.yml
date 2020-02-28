@@ -35,6 +35,6 @@ jobs:
         - git config --global user.name "Travis CI"
         - git add --all
         - 'git commit --message "📝 Update docs via build $TRAVIS_BUILD_NUMBER"'
-        - git push "https://${GITHUB_OAUTH_TOKEN}@github.com/stug111/gbomotors.git" master
+        - git push origin master
 
   fast_finish: true
