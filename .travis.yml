@@ -10,18 +10,17 @@ os: linux
 version: ~> 1.0
 
 node_js:
-  - '10'
+  - "10"
 
 before_install:
   - npm install
 
 jobs:
   include:
-    - stage: 'Release'
+    - stage: "Release"
       name: Release build
       if: branch = develop
       script:
-        - node ./deploy/update-version.js
         - npm run build
       deploy:
         provider: pages
