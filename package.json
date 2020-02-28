@@ -1,6 +1,6 @@
 {
   "name": "gbomotors",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -73,7 +73,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run update-version && git add"
+      "pre-commit": "lint-staged && npm run update-version",
+      "pre-push": "git add"
     }
   },
   "lint-staged": {
