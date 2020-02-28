@@ -7,6 +7,7 @@
  * @package Gbomotors
  */
 
+
 if ( ! function_exists( 'gbomotors_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
