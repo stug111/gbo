@@ -1,6 +1,6 @@
 {
   "name": "gbomotors",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -70,11 +70,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "node deploy/update-version.js && git add && lint-staged"
-    }
   },
   "lint-staged": {
     "src/**/*.scss": [
