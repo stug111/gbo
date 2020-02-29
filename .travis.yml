@@ -30,7 +30,7 @@ jobs:
         - git add --all
         - 'git commit --message "📝 Update docs via build $TRAVIS_BUILD_NUMBER"'
         - git push "https://${GITHUB_OAUTH_TOKEN}@github.com/stug111/gbomotors.git" master
-      # deploy:
+      deploy:
       #   provider: pages
       #   skip_cleanup: true
       #   github_token: $GITHUB_OAUTH_TOKEN
