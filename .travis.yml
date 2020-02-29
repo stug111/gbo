@@ -21,6 +21,9 @@ jobs:
       name: Release build
       if: branch = develop
       script:
+        - git clone -b master https://github.com/stug111/gbomotors.git old-version
+        - node deploy/update-version.js
+        - rm -rf old-version
         - npm run build
       deploy:
         provider: pages

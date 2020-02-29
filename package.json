@@ -71,6 +71,11 @@
   "dependencies": {
     "bootstrap": "^4.4.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*.scss": [
       "prettier --write",

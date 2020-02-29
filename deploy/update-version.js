@@ -1,26 +1,23 @@
-const fs = require("fs");
-const path = require("path");
-const execSync = require("child_process").execFileSync;
-const semver = require("semver");
+const fs = require("fs")
+const path = require("path")
+const semver = require("semver")
 
-const pathToFile = path.resolve(__dirname, "../style.css");
-const pjson = require("../package.json");
-const exec = command => execSync(command, { encoding: "utf8" });
+const pathToFile = path.resolve(__dirname, "../style.css")
+const pjsonOld = require("../old-version/package.json")
+const pjson = require("../package.json")
 
-const version = pjson.version;
+const version = pjsonOld.version
 
-const patch = semver.patch(version);
-const patchedVersion = `${semver.major(version)}.${semver.minor(
-	version
-)}.${patch + 1}`;
+const patch = semver.patch(version)
+const patchedVersion = `${semver.major(version)}.${semver.minor(version)}.${patch + 1}`
 
-pjson.version = patchedVersion;
+pjson.version = patchedVersion
 
-fs.writeFileSync("./package.json", JSON.stringify(pjson, null, 2));
+fs.writeFileSync("./package.json", JSON.stringify(pjson, null, 2))
 fs.unlinkSync(pathToFile, function(err) {
-	if (err) console.log(err);
-	else console.log("style.css deleted!");
-});
+	if (err) console.log(err)
+	else console.log("style.css deleted!")
+})
 
 fs.writeFileSync(
 	pathToFile,
@@ -49,10 +46,10 @@ fs.writeFileSync(
 	*/
 `,
 	function(err) {
-		if (err) console.log(err);
-		else console.log("style.css new created!");
+		if (err) console.log(err)
+		else console.log("style.css new created!")
 	}
-);
+)
 
-console.log("Current version:", version);
-console.log("Publishing version:", patchedVersion);
+console.log("Current version:", version)
+console.log("Publishing version:", patchedVersion)
