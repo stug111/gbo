@@ -43,9 +43,13 @@ if ( ! function_exists( 'gbomotors_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		add_image_size( 'sertificat-small', 103, 73, false );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Главное меню', 'gbomotors' ),
+			'footer-column-1' => esc_html__( 'Подвал 1 колонка', 'gbomotors' ),
+			'footer-column-2' => esc_html__( 'Подвал 2 колонка', 'gbomotors' ),
 		) );
 
 		/*

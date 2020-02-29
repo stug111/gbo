@@ -72,6 +72,7 @@
 						<?php wp_nav_menu(array(
 							'theme_location' 	=> 'primary',
 							'container_class' 	=> 'header__main-menu',
+							'fallback_cb'     => '__return_empty_string',
 							'depth'           	=> 1,
 						)) ?>
 					</div>

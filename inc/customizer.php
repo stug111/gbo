@@ -75,6 +75,18 @@ add_action('customize_register', function($customizer) {
 		)
 	);
 
+	$customizer->add_setting( 'gbomotors_email', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_email',
+		array(
+			'label'     => __('E-mail', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+
 	$customizer->add_setting( 'gbomotors_address', array(
 		'default' => ''
 	) );
@@ -123,6 +135,44 @@ add_action('customize_register', function($customizer) {
 			'description' => __('Укажите ссылку на страницу', 'gbomotors'),
 			'section'   => 'settings-site',
 			'type'      => 'text',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_copyright', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_copyright',
+		array(
+			'label'     => __('Copyright', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'text',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_vk', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_vk',
+		array(
+			'label'     => __('Вконтакте', 'gbomotors'),
+			'description' => __('Укажите ссылку', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'url',
+		)
+	);
+
+	$customizer->add_setting( 'gbomotors_instagram', array(
+		'default' => ''
+	) );
+	$customizer->add_control(
+		'gbomotors_instagram',
+		array(
+			'label'     => __('Instagram', 'gbomotors'),
+			'description' => __('Укажите ссылку', 'gbomotors'),
+			'section'   => 'settings-site',
+			'type'      => 'url',
 		)
 	);
 });
