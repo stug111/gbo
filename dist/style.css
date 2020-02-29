@@ -2613,6 +2613,81 @@ img {
   max-width: 100%;
   height: auto; }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 .header__top {
   display: flex;
   align-items: center;
@@ -2921,4 +2996,82 @@ img {
     @media (min-width: 992px) {
       .footer__copyright {
         margin-top: 42px; } }
+
+.block-review__header {
+  margin-bottom: 11px;
+  border-bottom: solid 2px #ffc400; }
+
+.block-review__name {
+  margin-bottom: 9px;
+  font-family: "PragmaticaSlabserif", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000; }
+  @media (min-width: 992px) {
+    .block-review__name {
+      font-size: 18px; } }
+
+.block-review__model-car {
+  margin-bottom: 13px;
+  font-family: "PragmaticaSlabserif", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #000000; }
+  @media (min-width: 992px) {
+    .block-review__model-car {
+      font-size: 14px; } }
+
+.block-review__excerpt {
+  font-family: "ProximaNova", sans-serif;
+  font-size: 19px;
+  line-height: 1.32;
+  font-weight: 300;
+  color: #000000; }
+
+.block-review .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-top: 19px;
+  padding: 0;
+  list-style: none; }
+  .block-review .slick-dots li {
+    margin-right: 4px;
+    margin-left: 4px; }
+  .block-review .slick-dots button {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    background-color: transparent;
+    border: solid 2px #1e485b;
+    border-radius: 50%;
+    font-size: 0; }
+    .block-review .slick-dots button[aria-selected="true"], .block-review .slick-dots button:hover {
+      background-color: #ffc400; }
+
+.block-review .slick-slide {
+  margin: 0 15px; }
+
+.block-review .slick-list {
+  margin: 0 -15px; }
+
+.block-review__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 201px;
+  height: 35px;
+  margin-top: 46px;
+  background-color: #ffc400;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 16px;
+  font-size: 13px;
+  line-height: 2.62;
+  font-weight: 300; }
+  @media (min-width: 992px) {
+    .block-review__button {
+      width: 242px;
+      height: 42px;
+      margin-top: 27px;
+      color: #000000; } }
 
