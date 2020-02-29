@@ -23,12 +23,19 @@ jobs:
       script:
         - node ./deploy/update-version.js
         - npm run build
-      deploy:
-        provider: pages
-        skip_cleanup: true
-        github_token: $GITHUB_OAUTH_TOKEN
-        target_branch: master
-        on:
-          branch: develop
+      after_script:
+        - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then exit; fi;
+        - git config --global user.email "travis@travis-ci.org"
+        - git config --global user.name "Travis CI"
+        - git add --all
+        - 'git commit --message "📝 Update docs via build $TRAVIS_BUILD_NUMBER"'
+        - git push "https://${GITHUB_OAUTH_TOKEN}@github.com/stug111/gbomotors.git" master
+      # deploy:
+      #   provider: pages
+      #   skip_cleanup: true
+      #   github_token: $GITHUB_OAUTH_TOKEN
+      #   target_branch: master
+      #   on:
+      #     branch: develop
 
   fast_finish: true
