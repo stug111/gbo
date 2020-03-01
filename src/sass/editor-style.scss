@@ -3,8 +3,7 @@
 @import "./fonts.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "./blocks/common/headline.scss";
-@import "./blocks/reviews/frontend.scss";
+@import "../sass/blocks/index.scss";
 
 .editor-styles-wrapper {
 	overflow-x: hidden;

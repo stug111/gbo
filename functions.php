@@ -137,6 +137,12 @@ function gbomotors_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gbomotors_scripts' );
 
+
+add_action( 'wp_enqueue_scripts', 'gbomotors_remove_stylesheet', 20 );
+function gbomotors_remove_stylesheet() {
+    wp_deregister_style('wp-bootstrap-blocks-styles');
+}
+
 /**
  * Implement the Custom Header feature.
  */

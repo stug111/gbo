@@ -1,0 +1,52 @@
+.ghostkit-accordion {
+	margin-bottom: 14px;
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 16px;
+	}
+
+	.ghostkit-accordion-item {
+		&:not(:last-of-type) {
+			margin-bottom: 14px;
+
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	.ghostkit-accordion-item-heading {
+		display: flex;
+		align-items: center;
+		padding-top: 18px;
+		padding-left: 21px;
+		padding-bottom: 17px;
+		background-color: #ffc400;
+		font-family: "ProximaNova", sans-serif;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 300;
+		text-decoration: underline;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 17px;
+			line-height: 1.24;
+		}
+	}
+
+	.fa-angle-right {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.199' height='8.175' viewBox='0 0 14.199 8.175'%3E%3Cpath data-name='Union 2' stroke='%23000' d='M1 1.213l6.205 5.962zM13.2 1L7.205 7.175z' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' opacity='.7'/%3E%3C/svg%3E")
+			no-repeat center center;
+	}
+
+	.ghostkit-accordion-item-active .ghostkit-accordion-item-collapse {
+		transform: none;
+	}
+
+	.ghostkit-accordion-item-content {
+		padding-left: 21px;
+	}
+}
