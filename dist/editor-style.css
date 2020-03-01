@@ -2897,6 +2897,7 @@ h2.rich-text {
     margin-bottom: 31px;
     border: 0;
     border-bottom: solid 2px #707070;
+    border-radius: 0;
     font-family: "ProximaNova", sans-serif;
     font-size: 22px;
     line-height: 1.09;
