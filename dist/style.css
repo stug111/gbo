@@ -8,6 +8,13 @@
 @font-face {
   font-display: swap;
   font-family: "ProximaNova";
+  font-weight: 700;
+  font-style: normal;
+  src: url(ProximaNova-Bold.woff) format("woff"); }
+
+@font-face {
+  font-display: swap;
+  font-family: "ProximaNova";
   font-weight: 300;
   font-style: normal;
   src: url(ProximaNova-Light.woff) format("woff"); }
@@ -2858,7 +2865,9 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 375px;
-  margin: 0; }
+  margin: 0;
+  font-family: "ProximaNova", sans-serif;
+  line-height: 1.13; }
 
 .site-wrapper {
   flex-grow: 1; }
@@ -3302,4 +3311,66 @@ h2 {
       height: 42px;
       margin-top: 27px;
       color: #000000; } }
+
+.ghostkit-divider {
+  max-width: 82px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.wp-block-gbomotors-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 9px;
+  background-position: center center; }
+  .wp-block-gbomotors-section.has-parallax {
+    background-attachment: fixed; }
+    @supports (-webkit-overflow-scrolling: touch) {
+      .wp-block-gbomotors-section.has-parallax {
+        background-attachment: scroll; } }
+  .wp-block-gbomotors-section.cover {
+    background-size: cover; }
+  .wp-block-gbomotors-section.no-repeat {
+    background-repeat: no-repeat; }
+  .wp-block-gbomotors-section.has-background-opacity::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: z-index(".wp-block-lustshop-section.has-background-opacity::before");
+    background-color: inherit;
+    opacity: 0.5;
+    content: ""; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-10::before {
+    opacity: 0.1; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-20::before {
+    opacity: 0.2; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-30::before {
+    opacity: 0.3; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-40::before {
+    opacity: 0.4; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-50::before {
+    opacity: 0.5; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-60::before {
+    opacity: 0.6; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-70::before {
+    opacity: 0.7; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-80::before {
+    opacity: 0.8; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-90::before {
+    opacity: 0.9; }
+  .wp-block-gbomotors-section.has-background-opacity.has-background-opacity-100::before {
+    opacity: 1; }
+
+.advantages-block h2 {
+  box-shadow: inset 0 -0.175em transparent, inset 0 -0.4em #ffffff; }
+
+.advantages-block p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px; }
+  @media (min-width: 992px) {
+    .advantages-block p {
+      font-size: 26px; } }
 
