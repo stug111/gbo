@@ -1,6 +1,5 @@
 import { SLUG } from "../utils"
 import edit from "./edit"
-import "../../src/js/reviews"
 
 const { __ } = wp.i18n
 const { registerBlockType } = wp.blocks
