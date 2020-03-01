@@ -143,6 +143,8 @@ function gbomotors_remove_stylesheet() {
     wp_deregister_style('wp-bootstrap-blocks-styles');
 }
 
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 /**
  * Implement the Custom Header feature.
  */

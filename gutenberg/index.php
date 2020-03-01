@@ -3,6 +3,7 @@
 namespace Gbomotors_Blocks;
 
 use Gbomotors_Blocks\Blocks\Block_Reviews;
+use Gbomotors_Blocks\Blocks\Block_Form_Order;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -58,10 +59,12 @@ class Gbomotors_Blocks {
 
 	public function includes() {
 		require_once GBOMOTORS_BLOCKS_ABSPATH . '/reviews/class_reviews_blocks.php';
+		require_once GBOMOTORS_BLOCKS_ABSPATH . '/form-order/class_form-order_blocks.php';
 	}
 	public function register_block_types() {
 
 		new Block_Reviews();
+		new Block_Form_Order();
 	}
 
 	public function enqueue_block_editor_assets() {

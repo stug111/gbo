@@ -2855,7 +2855,8 @@ a.text-dark:hover, a.text-dark:focus {
   display: none; }
 
 * {
-  outline: none; }
+  outline: none;
+  box-sizing: border-box; }
 
 body,
 html {
@@ -3233,6 +3234,18 @@ h2 {
       font-size: 50px;
       line-height: 1; } }
 
+h3 {
+  display: inline;
+  box-shadow: inset 0 -0.175em transparent, inset 0 -0.4em #ffc400;
+  font-family: "PragmaticaSlabserif", sans-serif;
+  font-size: 26px;
+  line-height: 1.42;
+  font-weight: bold; }
+  @media (min-width: 992px) {
+    h3 {
+      font-size: 40px;
+      line-height: 1; } }
+
 .block-review__header {
   margin-bottom: 11px;
   border-bottom: solid 2px #ffc400; }
@@ -3373,4 +3386,67 @@ h2 {
   @media (min-width: 992px) {
     .advantages-block p {
       font-size: 26px; } }
+
+.home-order {
+  padding-top: 36px;
+  padding-bottom: 44px; }
+  .home-order__image {
+    margin-bottom: -80px; }
+  @media (min-width: 992px) {
+    .home-order {
+      padding-top: 46px;
+      padding-bottom: 34px; } }
+  .home-order__description {
+    margin-bottom: 33px;
+    font-family: "ProximaNova", sans-serif;
+    font-size: 19px;
+    line-height: 1.21;
+    font-weight: 300;
+    color: #000000; }
+    @media (min-width: 992px) {
+      .home-order__description {
+        font-size: 26px;
+        line-height: 1.46; } }
+  .home-order .wpcf7-form {
+    display: flex;
+    flex-wrap: wrap; }
+  .home-order input.wpcf7-form-control {
+    width: 100%;
+    max-width: 100%;
+    height: 35px;
+    margin-bottom: 31px;
+    border: 0;
+    border-bottom: solid 2px #707070;
+    font-family: "ProximaNova", sans-serif;
+    font-size: 22px;
+    line-height: 1.09;
+    color: #000000; }
+    @media (min-width: 992px) {
+      .home-order input.wpcf7-form-control {
+        margin-bottom: 40px; } }
+  .home-order input.wpcf7-form-control[type="submit"] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 184px;
+    height: 48px;
+    background-image: linear-gradient(to bottom, #ffdc67, #ffc400);
+    border: 0;
+    font-family: "PragmaticaSlab", sans-serif;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 0 2px 1px rgba(255, 255, 255, 0.52); }
+    @media (min-width: 992px) {
+      .home-order input.wpcf7-form-control[type="submit"] {
+        max-width: 226px;
+        height: 59px;
+        font-size: 22px; } }
+  .home-order label {
+    margin-bottom: 10px;
+    font-family: "ProximaNova", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #000000; }
 
