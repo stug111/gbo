@@ -8,6 +8,7 @@ module.exports = {
 		index: path.resolve(process.cwd(), "src", "index.js"),
 		style: path.resolve(process.cwd(), "src", "sass", "style.scss"),
 		gutenberg: path.resolve(process.cwd(), "gutenberg", "index.js"),
+		"editor-style": path.resolve(process.cwd(), "src", "sass", "editor-style.scss"),
 	},
 	module: {
 		rules: [
@@ -17,15 +18,8 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: [
-							[
-								"@babel/preset-react",
-								{
-									pragma: "wp.element.createElement",
-								},
-							],
-							"@babel/preset-env",
-						],
+						presets: ["@babel/preset-react", "@babel/preset-env"],
+						plugins: ["lodash"],
 					},
 				},
 			},

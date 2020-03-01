@@ -13,4 +13,7 @@ registerBlockType(`${SLUG}/${NAME_BLOCK}`, {
 	category: SLUG,
 	keywords: [TITLE],
 	edit,
+	save() {
+		return null
+	},
 })

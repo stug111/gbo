@@ -36,6 +36,12 @@ class Gbomotors_Blocks {
 	protected function init_hooks() {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
 		add_filter( 'block_categories', array( $this, 'register_custom_block_category' ), 10, 2 );
+
+		add_theme_support( 'align-wide' );
+
+		// Editor Styles
+		add_theme_support( 'editor-styles' );
+		// add_editor_style( 'dist/editor-style.css' );
 	}
 
 	public function register_custom_block_category( $categories, $post ) {
@@ -66,6 +72,8 @@ class Gbomotors_Blocks {
 			$this->version,
 			true // Enqueue the script in the footer.
 		);
+
+		wp_enqueue_style( 'gbomotors-gutenberg', get_stylesheet_directory_uri() . '/dist/editor-style.css' );
 	}
 }
 

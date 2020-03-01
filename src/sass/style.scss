@@ -2,6 +2,9 @@
 @import "./mixins/index.scss";
 @import "./fonts.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
-@import "./global.scss";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities/_text.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "./global.scss";
+@import "./blocks/common/headline.scss";
 @import "./blocks/index.scss";
