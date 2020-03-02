@@ -7,3 +7,12 @@
 @import "./components/section/frontend.scss";
 @import "./components/advantages/frontend.scss";
 @import "./components/home-order/frontend.scss";
+
+.swiper-wrapper {
+	align-items: center;
+}
+
+.wp-block-image .aligncenter {
+	margin-top: 0;
+	margin-bottom: 0;
+}

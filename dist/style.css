@@ -3451,3 +3451,10 @@ h3 {
     line-height: 1.6;
     color: #000000; }
 
+.swiper-wrapper {
+  align-items: center; }
+
+.wp-block-image .aligncenter {
+  margin-top: 0;
+  margin-bottom: 0; }
+
