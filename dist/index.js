@@ -116,7 +116,19 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPAC
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_reviews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/reviews */ \"./src/js/reviews.js\");\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_reviews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/reviews */ \"./src/js/reviews.js\");\n/* harmony import */ var _js_home_price__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/home-price */ \"./src/js/home-price.js\");\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/home-price.js":
+/*!******************************!*\
+  !*** ./src/js/home-price.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! slick-carousel */ \"./node_modules/slick-carousel/slick/slick.js\");\n/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);\n\n\njquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {\n  jquery__WEBPACK_IMPORTED_MODULE_1___default()(\".home-price__carousel\").slick({\n    dots: true,\n    infinite: true,\n    speed: 300,\n    slidesToShow: 4,\n    arrows: false,\n    responsive: [{\n      breakpoint: 992,\n      settings: {\n        slidesToShow: 2\n      }\n    }, {\n      breakpoint: 480,\n      settings: {\n        slidesToShow: 1,\n        centerMode: true\n      }\n    }]\n  });\n});\n\n//# sourceURL=webpack:///./src/js/home-price.js?");
 
 /***/ }),
 
