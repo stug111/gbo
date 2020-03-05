@@ -5,7 +5,7 @@ const { withSelect } = wp.data
 const { compose } = wp.compose
 const { Component, Fragment } = wp.element
 const ServerSideRender = wp.serverSideRender
-const { InspectorControls, MediaUpload, MediaUploadCheck } = wp.editor
+const { InspectorControls, MediaUpload, MediaUploadCheck } = wp.blockEditor
 const { PanelBody, TextControl, Button, ResponsiveWrapper, Spinner } = wp.components
 
 const NAME_BLOCK = "form-order"

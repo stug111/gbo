@@ -2883,10 +2883,13 @@ h2.rich-text {
   padding-bottom: 44px; }
   .home-order__image {
     margin-bottom: -80px; }
+    .home-order__image img {
+      position: relative;
+      z-index: 1; }
   @media (min-width: 992px) {
     .home-order {
       padding-top: 46px;
-      padding-bottom: 34px; } }
+      padding-bottom: 0; } }
   .home-order__description {
     margin-bottom: 33px;
     font-family: "ProximaNova", sans-serif;
@@ -2956,6 +2959,16 @@ h2.rich-text {
     background-color: #f2f2f2;
     border: solid 1px #9b9b9b;
     border-radius: 10px; }
+    .home-price__item--favorite {
+      border-color: #ffc400; }
+      .home-price__item--favorite .home-price__price {
+        border-color: #ffc400; }
+      .home-price__item--favorite .home-price__list-item:nth-child(1)::before, .home-price__item--favorite .home-price__list-item:nth-child(2)::before {
+        border-color: solid 1px #ffc400; }
+      .home-price__item--favorite .home-price__footer {
+        border-top-color: #ffc400; }
+      .home-price__item--favorite .home-price__main-price {
+        background-color: #ffc400; }
   .home-price__title {
     padding: 13px 22px 10px;
     font-family: "PragmaticaSlab", sans-serif;
@@ -3048,7 +3061,7 @@ h2.rich-text {
     .home-price__list-item span {
       font-family: "PragmaticaSlab", sans-serif;
       font-size: 13px;
-      line-height: 2;
+      line-height: 1;
       font-weight: bold;
       color: #000000; }
       @media (min-width: 992px) {
@@ -3104,7 +3117,9 @@ h2.rich-text {
       .home-price__footer-rass {
         font-size: 13px; } }
   .home-price .slick-dots {
-    display: flex;
+    /* stylelint-disable */
+    display: flex !important;
+    /* stylelint-enable */
     justify-content: center;
     margin: 0;
     margin-top: 19px;
@@ -3128,6 +3143,8 @@ h2.rich-text {
   .home-price .slick-list {
     margin: 0 -15px;
     padding-top: 50px !important; }
+  .home-price .slick-track {
+    display: flex; }
   .home-price .slick-center {
     zoom: 1.2;
     transform: translateY(-30px); }
@@ -3143,4 +3160,7 @@ h2.rich-text {
 
 .wp-block[data-align=full] {
   max-width: none; }
+
+.slick-track {
+  display: flex; }
 

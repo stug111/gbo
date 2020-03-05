@@ -4,11 +4,16 @@
 
 	&__image {
 		margin-bottom: -80px;
+
+		img {
+			position: relative;
+			z-index: 1;
+		}
 	}
 
 	@include media-breakpoint-up(lg) {
 		padding-top: 46px;
-		padding-bottom: 34px;
+		padding-bottom: 0;
 	}
 
 	&__description {

@@ -1,4 +1,8 @@
+$grey: #9b9b9b;
+$yellow: #ffc400;
+
 .home-price {
+	$self: &;
 	margin-top: 48px;
 	margin-bottom: 28px;
 
@@ -16,8 +20,31 @@
 
 	&__item {
 		background-color: #f2f2f2;
-		border: solid 1px #9b9b9b;
+		border: solid 1px $grey;
 		border-radius: 10px;
+
+		&--favorite {
+			border-color: $yellow;
+
+			#{$self}__price {
+				border-color: $yellow;
+			}
+
+			#{$self}__list-item {
+				&:nth-child(1)::before,
+				&:nth-child(2)::before {
+					border-color: solid 1px $yellow;
+				}
+			}
+
+			#{$self}__footer {
+				border-top-color: $yellow;
+			}
+
+			#{$self}__main-price {
+				background-color: $yellow;
+			}
+		}
 	}
 
 	&__title {
@@ -75,7 +102,7 @@
 		padding: 15px 12px 15px 15px;
 		border: 0;
 		border-style: solid;
-		border-color: #9b9b9b;
+		border-color: $grey;
 		border-bottom-width: 1px;
 		font-family: "ProximaNova", sans-serif;
 		font-size: 10px;
@@ -132,7 +159,7 @@
 				left: 15px;
 				display: block;
 				width: 17px;
-				border-bottom: solid 1px #9b9b9b;
+				border-bottom: solid 1px $grey;
 				content: "";
 			}
 		}
@@ -140,7 +167,7 @@
 		span {
 			font-family: "PragmaticaSlab", sans-serif;
 			font-size: 13px;
-			line-height: 2;
+			line-height: 1;
 			font-weight: bold;
 			color: #000000;
 
@@ -156,7 +183,7 @@
 		align-items: center;
 		margin-top: 5px;
 		margin-bottom: 26px;
-		border-top: solid 1px #9b9b9b;
+		border-top: solid 1px $grey;
 
 		@include media-breakpoint-up(lg) {
 			margin-bottom: 18px;
@@ -212,7 +239,9 @@
 	}
 
 	.slick-dots {
-		display: flex;
+		/* stylelint-disable */
+		display: flex !important;
+		/* stylelint-enable */
 		justify-content: center;
 		margin: 0;
 		margin-top: 19px;
@@ -248,6 +277,10 @@
 		margin: 0 -15px;
 		// stylelint-disable
 		padding-top: 50px !important;
+	}
+
+	.slick-track {
+		display: flex;
 	}
 
 	.slick-center {

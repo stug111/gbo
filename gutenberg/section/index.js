@@ -13,7 +13,7 @@ const {
 	PanelColorSettings,
 	withColors,
 	getColorClassName,
-} = wp.editor
+} = wp.blockEditor
 const { Toolbar, IconButton, ToggleControl, PanelBody, RangeControl } = wp.components
 const { compose } = wp.compose
 

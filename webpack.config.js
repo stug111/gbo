@@ -10,6 +10,10 @@ module.exports = {
 		gutenberg: path.resolve(process.cwd(), "gutenberg", "index.js"),
 		"editor-style": path.resolve(process.cwd(), "src", "sass", "editor-style.scss"),
 	},
+	externals: {
+		react: "React",
+		"react-dom": "ReactDOM",
+	},
 	module: {
 		rules: [
 			{

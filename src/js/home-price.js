@@ -10,6 +10,13 @@ $(document).ready(function() {
 		arrows: false,
 		responsive: [
 			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+					centerMode: true,
+				},
+			},
+			{
 				breakpoint: 992,
 				settings: {
 					slidesToShow: 2,
@@ -19,7 +26,6 @@ $(document).ready(function() {
 				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
-					centerMode: true,
 				},
 			},
 		],
