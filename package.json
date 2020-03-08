@@ -73,6 +73,7 @@
     "printWidth": 100
   },
   "dependencies": {
+    "alpinejs": "^2.1.0",
     "bootstrap": "^4.4.1",
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1"

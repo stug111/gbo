@@ -5,6 +5,7 @@ namespace Gbomotors_Blocks;
 use Gbomotors_Blocks\Blocks\Block_Reviews;
 use Gbomotors_Blocks\Blocks\Block_Form_Order;
 use Gbomotors_Blocks\Blocks\Block_Home_Price;
+use Gbomotors_Blocks\Blocks\Block_Calculator;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,18 +63,28 @@ class Gbomotors_Blocks {
 		require_once GBOMOTORS_BLOCKS_ABSPATH . '/reviews/class_reviews_blocks.php';
 		require_once GBOMOTORS_BLOCKS_ABSPATH . '/form-order/class_form-order_blocks.php';
 		require_once GBOMOTORS_BLOCKS_ABSPATH . '/home-price/class_home_price_blocks.php';
+		require_once GBOMOTORS_BLOCKS_ABSPATH . '/calculator/class_calculator_blocks.php';
 	}
 	public function register_block_types() {
 
 		new Block_Reviews();
 		new Block_Form_Order();
 		new Block_Home_Price();
+		new Block_Calculator();
 	}
 
 	public function enqueue_block_editor_assets() {
 		wp_enqueue_script(
 			"gbomotors-gutenberg",
 			get_template_directory_uri() . '/dist/gutenberg.js',
+			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+			$this->version,
+			true // Enqueue the script in the footer.
+		);
+
+		wp_enqueue_script(
+			"gbomotors-calculator",
+			get_template_directory_uri() . '/src/js/calculator.js',
 			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
 			$this->version,
 			true // Enqueue the script in the footer.

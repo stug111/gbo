@@ -130,6 +130,7 @@ function gbomotors_scripts() {
 
 	wp_enqueue_style( 'gbomotors', get_template_directory_uri() . '/dist/style.css', array(), $version );
 	wp_enqueue_script('gbomotors', get_template_directory_uri() . '/dist/index.js', array(), $version, true);
+	wp_enqueue_script('gbomotors-function', get_template_directory_uri() . '/src/js/calculator.js', array(), $version, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
