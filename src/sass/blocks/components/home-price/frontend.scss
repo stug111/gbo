@@ -19,6 +19,7 @@ $yellow: #ffc400;
 	}
 
 	&__item {
+		position: relative;
 		background-color: #f2f2f2;
 		border: solid 1px $grey;
 		border-radius: 10px;
@@ -46,6 +47,35 @@ $yellow: #ffc400;
 				background-color: $yellow;
 			}
 		}
+	}
+
+	&__marker {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 92px;
+		height: 92px;
+	}
+
+	&__marker-block {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 130px;
+		height: 24px;
+		background-image: linear-gradient(109deg, #ffc400 46%, #c59c13 98%);
+		font-family: "PragmaticaSlab", sans-serif;
+		font-size: 8px;
+		line-height: 0.88;
+		font-weight: bold;
+		color: #000000;
+		text-transform: uppercase;
+		transform: rotate(45deg) translateX(2px) translateY(-16px);
+		clip-path: polygon(17% 0, 81% 0, 100% 100%, 0 100%);
 	}
 
 	&__title {

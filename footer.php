@@ -16,7 +16,7 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 footer__column d-flex flex-column align-items-center d-lg-block">
+				<div class="col-xl-4 col-lg-3 footer__column d-flex flex-column align-items-center d-lg-block">
 					<div class="footer__logo">
 						<?php the_custom_logo(); ?>
 					</div>
@@ -32,7 +32,7 @@
 					</div>
 
 				</div>
-				<div class="col-lg-4 footer__column">
+				<div class="col-xl-4 col-lg-5 footer__column">
 					<div class="row">
 						<?php wp_nav_menu(array(
 							'container_class' => 'col-6 footer__menu',
@@ -66,29 +66,16 @@
 					</div>
 
 				</div>
-				<div class="col-lg-3 offset-lg-1 footer__column">
+				<div class="col-xl-3 offset-xl-1 col-lg-4 footer__column">
 					<div class="footer__sertificats">
 						<span class="d-lg-none"><?php _e('Cертификаты', 'gbomotors') ?></span>
 						<span class="d-none d-lg-inline"><?php _e('Наши сертификаты', 'gbomotors') ?></span>
 						<div class="footer__sertificats-list">
-							<div class="footer__sertificats-item">
-								<img src="<?php echo get_bloginfo("template_directory") ?>/src/img/image-2.jpg" alt="">
-							</div>
-							<div class="footer__sertificats-item">
-								<img src="<?php echo get_bloginfo("template_directory") ?>/src/img/image-2.jpg" alt="">
-							</div>
-							<div class="footer__sertificats-item">
-								<img src="<?php echo get_bloginfo("template_directory") ?>/src/img/image-2.jpg" alt="">
-							</div>
-							<div class="footer__sertificats-item">
-								<img src="<?php echo get_bloginfo("template_directory") ?>/src/img/image-2.jpg" alt="">
-							</div>
-							<div class="footer__sertificats-item">
-								<img src="<?php echo get_bloginfo("template_directory") ?>/src/img/image-2.jpg" alt="">
-							</div>
-							<div class="footer__sertificats-item">
-								<img src="<?php echo get_bloginfo("template_directory") ?>/src/img/image-2.jpg" alt="">
-							</div>
+							<?php
+								if ( class_exists('Gbomotors') ) {
+									Gbomotors::get_certificats();
+								}
+							?>
 						</div>
 					</div>
 					<div class="footer__copyright d-lg-none">© <?php echo date('Y'); ?>, <?php echo get_theme_mod( 'gbomotors_copyright' ) ?></div>

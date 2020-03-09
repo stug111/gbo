@@ -67,7 +67,7 @@ class Gbomotors {
 	}
 
 	public function image_size() {
-		add_image_size( 'sertificat-small', 103, 73, false );
+		add_image_size( 'sertificat-small', 74, 101, false );
 	}
 
 	public function widgets_init() {
@@ -103,6 +103,25 @@ class Gbomotors {
 		require get_template_directory() . '/inc/customizer.php';
 		require get_template_directory() . '/inc/custom-function.php';
 		require get_template_directory() . '/gutenberg/index.php';
+	}
+
+	static function get_certificats() {
+		$args = array(
+			'posts_per_page'   => 6,
+			'post_status'      => 'publish',
+			'suppress_filters' => false,
+			'post_type'		   => 'certificates'
+		);
+
+		$certificates = get_posts( $args );
+
+		foreach ( $certificates as $key => $certificat ) :
+		?>
+			<div class="footer__sertificats-item <?php if ($key > 2) echo 'd-none d-lg-block' ?>">
+				<?php echo get_the_post_thumbnail( $certificat, 'sertificat-small' ); ?>
+			</div>
+		<?php
+		endforeach;
 	}
 }
 

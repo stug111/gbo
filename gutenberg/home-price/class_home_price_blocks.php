@@ -30,6 +30,13 @@ class Block_Home_Price {
 					<div class="home-price__carousel">
 						<?php foreach ( $recent_posts as $post ) : ?>
 							<div class="home-price__item <?php if (get_field('favorite', $post->ID)) echo "home-price__item--favorite" ?>">
+								<?php if ( get_field('favorite', $post->ID) ): ?>
+									<div class="home-price__marker">
+										<div class="home-price__marker-block">
+											<?php _e('Рекомендуем', 'gbomotors'); ?>
+										</div>
+									</div>
+								<?php endif; ?>
 								<div class="home-price__title">
 									<?php echo get_the_title($post->ID); ?>
 								</div>
