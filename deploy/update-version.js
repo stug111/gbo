@@ -12,9 +12,9 @@ const patch = semver.patch(version)
 
 let patchedVersion = ""
 
-if (patch === 9) {
+if (patch >= 9) {
 	patchedVersion = `${semver.major(version)}.${semver.minor(version) + 1}.${0}`
-} else if (semver.minor(version) === 9) {
+} else if (semver.minor(version) >= 9) {
 	patchedVersion = `${semver.major(version) + 1}.${0}.${0}`
 }
 
