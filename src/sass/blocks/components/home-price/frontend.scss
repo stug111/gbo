@@ -24,6 +24,7 @@ $yellow: #ffc400;
 		border-radius: 10px;
 
 		&--favorite {
+			border-width: 4px;
 			border-color: $yellow;
 
 			#{$self}__price {

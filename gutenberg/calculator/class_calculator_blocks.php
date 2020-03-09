@@ -234,7 +234,7 @@ class Block_Calculator {
 									<div class="calculator__finish-title">Экономия в год</div>
 									<div class="calculator__finish-price" x-text="econgod()"></div>
 								</div>
-								<div class="col-12 d-block d-lg-none">
+								<div class="col-12 d-flex justify-content-end d-lg-none">
 									<div class="calculator__econom">
 										<div class="calculator__econom-title">ВАША <br> ЭКОНОМИЯ</div>
 										<div class="calculator__econom-price">
