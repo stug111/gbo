@@ -38,11 +38,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="header__main">
+		<div class="header__main" x-data="{ open: false }">
 			<div class="container">
 				<div class="header__main-container">
-					<button class="header__main-burger d-lg-none" type="button">
-						<svg xmlns="http://www.w3.org/2000/svg" width="33" height="24" viewBox="0 0 33 24"><g data-name="Group 12" fill="none" stroke="#1e485b" stroke-linecap="round" stroke-width="4"><path data-name="Line 67" d="M2 2h29"/><path data-name="Line 68" d="M2 12h29"/><path data-name="Line 69" d="M2 22h29"/></g></svg>
+					<button class="header__main-burger d-lg-none" type="button" @click="open = !open">
+						<svg x-show="!open" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 33 24"><g data-name="Group 12" fill="none" stroke="#1e485b" stroke-linecap="round" stroke-width="4"><path data-name="Line 67" d="M2 2h29"/><path data-name="Line 68" d="M2 12h29"/><path data-name="Line 69" d="M2 22h29"/></g></svg>
+						<svg x-show="open" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26.163 26.163"><g data-name="Group 50" fill="none" stroke="#1e485b" stroke-linecap="round" stroke-width="4"><path data-name="Line 68" d="M2.828 2.828l20.506 20.506"/><path data-name="Line 141" d="M2.828 23.334L23.334 2.828"/></g></svg>
 					</button>
 					<div class="header__main-logo">
 						<?php the_custom_logo(); ?>
@@ -75,6 +76,31 @@
 							'fallback_cb'     => '__return_empty_string',
 							'depth'           	=> 1,
 						)) ?>
+					</div>
+				</div>
+			</div>
+			<div class="header__mobile d-lg-none" :class="{ 'd-none': !open }"  @click.away="open = false">
+				<div class="container">
+					<?php wp_nav_menu(array(
+						'theme_location' 	=> 'primary',
+						'container_class' 	=> 'header__mobile-main-menu',
+						'fallback_cb'     => '__return_empty_string',
+						'depth'           	=> 1,
+					)) ?>
+					<div class="header__mobile-block">
+						<?php if ( get_theme_mod( 'gbomotors_address' ) ) : ?>
+							<span class="header__mobile-city">
+								<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path d="M103.257,239.857C103,239.755,97,237.282,97,231a7,7,0,1,1,14,0c0,6.282-6,8.754-6.257,8.857a2,2,0,0,1-1.486,0ZM99,231c0,5,5,7,5,7s5-2,5-7a5,5,0,1,0-10,0Zm2,0a3,3,0,1,1,3,3A3,3,0,0,1,101,231Zm2,0a1,1,0,1,0,1-1A1,1,0,0,0,103,231Z" transform="translate(-97 -224)"/></svg>
+								— <?php echo get_theme_mod( 'gbomotors_address' ); ?>
+							</span>
+						<?php endif; ?>
+						<?php if ( get_theme_mod( 'gbomotors_phone_number' ) ) : ?>
+							<a href="tel:<?php echo filter_phone(get_theme_mod( 'gbomotors_phone_number' )); ?>" class="header__mobile-phone">
+								<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16.003" height="16" viewBox="0 0 16.003 16"><path d="M687.9,651.63l-.77,2.32a2,2,0,0,1-1.086,1.2,10.008,10.008,0,0,1-10.763-1.742c-.127-.114-.242-.228-.34-.326a9.5,9.5,0,0,1-1.5-1.9,8.069,8.069,0,0,1-.388-.721,9.987,9.987,0,0,1-.2-8.5,2.006,2.006,0,0,1,1.2-1.086l2.321-.77a2,2,0,0,1,2.528,1.266l1,3a2,2,0,0,1-1,2.421l-.728.364a3.962,3.962,0,0,0,1.014,1.68,3.911,3.911,0,0,0,1.667,1l.364-.727a2,2,0,0,1,2.422-1l3,1A2,2,0,0,1,687.9,651.63ZM686,651l-3-1-1,2a6.009,6.009,0,0,1-6-6l2-1-1-3-2.321.77A7.92,7.92,0,0,0,674,646a7.84,7.84,0,0,0,.85,3.58,6.032,6.032,0,0,0,.3.56,7.549,7.549,0,0,0,1.191,1.51c.09.09.18.18.28.27a8,8,0,0,0,8.611,1.4Z" transform="translate(-671.997 -640)"/></svg>
+								—
+								<span class="header__mobile-phone-number"><?php echo get_theme_mod( 'gbomotors_phone_number' ); ?></span>
+							</a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>

@@ -124,9 +124,10 @@ $yellow: #ffc400;
 			line-height: 1.37;
 			font-weight: bold;
 			color: #000000;
+			white-space: nowrap;
 
 			@include media-breakpoint-up(lg) {
-				font-size: 22px;
+				font-size: 20px;
 			}
 		}
 	}

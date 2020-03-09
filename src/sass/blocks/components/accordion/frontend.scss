@@ -49,4 +49,10 @@
 	.ghostkit-accordion-item-content {
 		padding-left: 21px;
 	}
+
+	svg.ghostkit-svg-icon {
+		width: 24px;
+		height: 24px;
+		transform: rotate(90deg);
+	}
 }
