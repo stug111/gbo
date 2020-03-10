@@ -40,6 +40,11 @@
 
 	&__main {
 		background-color: #ffffff;
+
+		&--no-home {
+			margin-bottom: 47px;
+			box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+		}
 	}
 
 	&__main-container {

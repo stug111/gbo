@@ -22,7 +22,7 @@ class Gbomotors {
 		add_action( 'after_setup_theme', array( $this, 'theme_support',  ) );
 		add_action( 'after_setup_theme', array( $this, 'nav_menu',  ) );
 		add_action( 'after_setup_theme', array( $this, 'image_size',  ) );
-		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
+		// add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'assets_include' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'disable_assests_plugins' ), 20 );
 

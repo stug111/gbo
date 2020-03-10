@@ -38,7 +38,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="header__main" x-data="{ open: false }">
+		<div class="header__main <?php if ( !is_front_page() ) echo "header__main--no-home" ?>" x-data="{ open: false }">
 			<div class="container">
 				<div class="header__main-container">
 					<button class="header__main-burger d-lg-none" type="button" @click="open = !open">
