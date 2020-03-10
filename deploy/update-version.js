@@ -42,7 +42,7 @@ fs.writeFileSync(
 	License URI: LICENSE
 	Text Domain: gbomotors
 	Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-	GitHub Theme URI: stug111/gbo
+	GitHub Theme URI: stug111/gbomotors
 
 	This theme, like WordPress, is licensed under the GPL.
 	Use it to make something cool, have fun, and share what you've learned with others.
