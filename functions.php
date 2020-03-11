@@ -25,6 +25,9 @@ class Gbomotors {
 		// add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'assets_include' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'disable_assests_plugins' ), 20 );
+		if( function_exists('acf_register_block_type') ) {
+			add_action('acf/init', array( $this, 'register_acf_block_types' ));
+		}
 
 		add_filter( 'wpcf7_autop_or_not', '__return_false' );
 		add_filter( 'get_the_archive_title', function( $title ){
@@ -71,6 +74,7 @@ class Gbomotors {
 
 	public function image_size() {
 		add_image_size( 'sertificat-small', 74, 101, false );
+		add_image_size( $this->theme_name . '-work', 558, 402, false );
 	}
 
 	public function widgets_init() {
@@ -137,6 +141,15 @@ class Gbomotors {
 			<div class="block-review__excerpt"><?php echo $excerpt; ?></div>
 		</div>
 	<?php
+	}
+
+	public function register_acf_block_types() {
+		acf_register_block_type(array(
+			'name'              => 'block-work',
+			'title'             => __('Наши работы'),
+			'render_template'   => 'template-parts/blocks/block-work.php',
+			'category'          => $this->theme_name,
+		));
 	}
 }
 

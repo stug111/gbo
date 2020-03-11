@@ -19,3 +19,18 @@
 		margin-bottom: 0;
 	}
 }
+
+.wp-block-gallery {
+	.blocks-gallery-item {
+		margin-bottom: 20px;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 40px;
+		}
+
+		figure {
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

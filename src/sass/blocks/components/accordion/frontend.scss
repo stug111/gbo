@@ -18,9 +18,11 @@
 	.ghostkit-accordion-item-heading {
 		display: flex;
 		align-items: center;
-		padding-top: 18px;
-		padding-left: 21px;
-		padding-bottom: 17px;
+		/* stylelint-disable */
+		padding-top: 18px !important;
+		padding-left: 21px !important;
+		padding-bottom: 17px !important;
+		/* stylelint-enable */
 		background-color: #ffc400;
 		font-family: "ProximaNova", sans-serif;
 		font-size: 14px;
