@@ -156,7 +156,11 @@ input[type="range"] {
 
 .entry-header,
 .page-header {
-	margin-bottom: 50px;
+	margin-bottom: 15px;
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 50px;
+	}
 }
 
 .page-header {
