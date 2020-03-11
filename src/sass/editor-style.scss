@@ -3,14 +3,7 @@
 @import "./fonts.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 @import "../../node_modules/slick-carousel/slick/slick.scss";
-@import "../sass/blocks/components/accordion/backend.scss";
-@import "../sass/blocks/components/common/backend.scss";
-@import "../sass/blocks/components/reviews/backend.scss";
-@import "../sass/blocks/components/divider/backend.scss";
-@import "../sass/blocks/components/section/backend.scss";
-@import "../sass/blocks/components/home-order/backend.scss";
-@import "../sass/blocks/components/home-price/backend.scss";
-@import "../sass/blocks/components/calculator/backend.scss";
+@import "./blocks/components/**/backend.scss";
 
 .editor-styles-wrapper {
 	overflow-x: hidden;

@@ -1,0 +1,21 @@
+.site-button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 32px;
+	padding: 0 23px;
+	background-image: linear-gradient(to bottom, #ffdc67, #ffc400);
+	border: 0;
+	font-family: "PragmaticaSlab", sans-serif;
+	font-size: 11px;
+	line-height: 1;
+	font-weight: bold;
+	color: #000000;
+	text-shadow: 0 2px 1px rgba(255, 255, 255, 0.52);
+
+	@include media-breakpoint-up(lg) {
+		height: 49px;
+		padding: 0 53px;
+		font-size: 18px;
+	}
+}

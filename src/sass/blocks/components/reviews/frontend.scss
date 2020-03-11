@@ -1,4 +1,14 @@
 .block-review {
+	&__item {
+		.archive & {
+			margin-bottom: 33px;
+
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 47px;
+			}
+		}
+	}
+
 	&__header {
 		margin-bottom: 11px;
 		border-bottom: solid 2px #ffc400;

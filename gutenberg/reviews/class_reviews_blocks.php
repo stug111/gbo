@@ -2,6 +2,8 @@
 
 namespace Gbomotors_Blocks\Blocks;
 
+use Gbomotors;
+
 class Block_Reviews {
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_block' ) );
@@ -24,44 +26,27 @@ class Block_Reviews {
 		}
 
 		$recent_posts = get_posts( $args );
-		$list_items_markup = '';
 
-		foreach ( $recent_posts as $post ) {
-			$list_items_markup .= sprintf(
-				'
-					<div class="block-review__item">
-						<div class="block-review__header">
-							<div class="block-review__name">%1$s</div>
-							<div class="block-review__model-car">%2$s</div>
-						</div>
-						<div class="block-review__excerpt">%3$s</div>
-					</div>
-				',
-				get_the_title($post),
-				get_field('car_model', $post),
-				get_the_excerpt($post)
-			);
-		}
-
-		return sprintf(
-			'
-				<div class="%2$s">
-					<div class="container">
-						<div class="block-review__slider">
-							%1$s
-						</div>
-						<div class="d-flex justify-content-center">
-							<a href="#" class="block-review__button">
-								%3$s
-							</a>
-						</div>
-					</div>
+		ob_start();
+		?>
+		<div class="<?php echo esc_attr( $class ); ?>">
+			<div class="container">
+				<div class="block-review__slider">
+					<?php
+						foreach ( $recent_posts as $post ) {
+							echo Gbomotors::review(get_the_title($post), get_field('car_model', $post), get_the_excerpt($post));
+						}
+					?>
 				</div>
-			',
-			$list_items_markup,
-			esc_attr( $class ),
-			__('Посмотреть все отзывы', 'gbomotors')
-		);
+				<div class="d-flex justify-content-center">
+					<a href="#" class="block-review__button">
+						<?php _e('Посмотреть все отзывы', 'gbomotors') ?>
+					</a>
+				</div>
+			</div>
+		</div>
+		<?php
+		return ob_get_clean();
 	}
 
 	public function register_block() {

@@ -26,7 +26,10 @@ class Gbomotors {
 		add_action( 'wp_enqueue_scripts', array( $this, 'assets_include' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'disable_assests_plugins' ), 20 );
 
-		add_filter('wpcf7_autop_or_not', '__return_false');
+		add_filter( 'wpcf7_autop_or_not', '__return_false' );
+		add_filter( 'get_the_archive_title', function( $title ){
+			return preg_replace('~^[^:]+: ~', '', $title );
+		});
 
 		$this->includes();
 
@@ -122,6 +125,18 @@ class Gbomotors {
 			</div>
 		<?php
 		endforeach;
+	}
+
+	static function review($name, $car, $excerpt) {
+		?>
+		<div class="block-review__item">
+			<div class="block-review__header">
+				<div class="block-review__name"><?php echo $name; ?></div>
+				<div class="block-review__model-car"><?php echo $car; ?></div>
+			</div>
+			<div class="block-review__excerpt"><?php echo $excerpt; ?></div>
+		</div>
+	<?php
 	}
 }
 

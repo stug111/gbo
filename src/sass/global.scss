@@ -154,6 +154,15 @@ input[type="range"] {
 	}
 }
 
-.entry-header {
-	margin-bottom: 30px;
+.entry-header,
+.page-header {
+	margin-bottom: 50px;
+}
+
+.page-header {
+	.post-type-archive-review & {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
