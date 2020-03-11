@@ -5,7 +5,11 @@ namespace Gbomotors_Blocks\Blocks;
 use Gbomotors;
 
 class Block_Reviews {
+	private $post_type;
+
 	public function __construct() {
+		$this->post_type = 'review';
+
 		add_action( 'init', array( $this, 'register_block' ) );
 	}
 
@@ -16,7 +20,7 @@ class Block_Reviews {
 			'order'            => $attributes['order'],
 			'orderby'          => $attributes['orderBy'],
 			'suppress_filters' => false,
-			'post_type'		   => 'review'
+			'post_type'		   => $this->post_type
 		);
 
 		$class = 'block-review';
@@ -39,7 +43,7 @@ class Block_Reviews {
 					?>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#" class="block-review__button">
+					<a href="<?php echo get_post_type_archive_link($this->post_type); ?>" class="block-review__button">
 						<?php _e('Посмотреть все отзывы', 'gbomotors') ?>
 					</a>
 				</div>
