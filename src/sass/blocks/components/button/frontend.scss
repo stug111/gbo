@@ -34,4 +34,19 @@
 			font-size: 21px;
 		}
 	}
+
+	.block-services & {
+		width: 189px;
+		height: 40px;
+		font-size: 14px;
+
+		@include media-breakpoint-up(lg) {
+			width: 242px;
+			height: 51px;
+			padding-right: 0;
+			padding-left: 0;
+			font-size: 18px;
+			line-height: 1.22;
+		}
+	}
 }

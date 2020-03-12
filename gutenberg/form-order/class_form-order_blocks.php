@@ -8,32 +8,12 @@ class Block_Form_Order {
 	}
 
 	public function render_block($attributes) {
+
 		$class = '';
 
 		if ( isset( $attributes['className'] ) ) {
 			$class .= ' ' . $attributes['className'];
 		}
-
-		$recent_posts = get_posts( $args );
-		$list_items_markup = '';
-
-		foreach ( $recent_posts as $post ) {
-			$list_items_markup .= sprintf(
-				'
-					<div class="block-review__item">
-						<div class="block-review__header">
-							<div class="block-review__name">%1$s</div>
-							<div class="block-review__model-car">%2$s</div>
-						</div>
-						<div class="block-review__excerpt">%3$s</div>
-					</div>
-				',
-				get_the_title($post),
-				get_field('car_model', $post),
-				get_the_excerpt($post)
-			);
-		}
-
 		ob_start();
 			?>
 

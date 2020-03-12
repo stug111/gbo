@@ -101,6 +101,11 @@ class Gbomotors {
 
 	public function disable_assests_plugins() {
 		wp_deregister_style('wp-bootstrap-blocks-styles');
+		wp_deregister_style('contact-form-7');
+		wp_deregister_script('webfontloader');
+		wp_deregister_script('ghostkit-fonts-loader');
+		wp_deregister_script('hoverintent-js');
+		wp_deregister_script('wp-embed');
 	}
 
 	public function includes() {
@@ -144,10 +149,15 @@ class Gbomotors {
 	}
 
 	public function register_acf_block_types() {
+		$this->register_block_type('block-work', 'Наши работы');
+		$this->register_block_type('block-services', 'Услуги и цены');
+	}
+
+	public function register_block_type($name, $title) {
 		acf_register_block_type(array(
-			'name'              => 'block-work',
-			'title'             => __('Наши работы'),
-			'render_template'   => 'template-parts/blocks/block-work.php',
+			'name'              => $name,
+			'title'             => __($title),
+			'render_template'   => 'template-parts/blocks/' . $name . '.php',
 			'category'          => $this->theme_name,
 		));
 	}
