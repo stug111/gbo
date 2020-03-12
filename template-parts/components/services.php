@@ -18,11 +18,13 @@
 				<?php _e('Бак тороидальный', 'gbomotors'); ?>
 				<span><?php echo get_field('bak', $post->ID); ?></span>
 			</div>
-			<div class="block-services__marker">
-				<div class="block-work__marker-block">
-					<?php _e('Рекомендуем', 'gbomotors'); ?>
+			<?php if ( get_field('favorite', $post->ID) ): ?>
+				<div class="block-services__marker">
+					<div class="block-work__marker-block">
+						<?php _e('Рекомендуем', 'gbomotors'); ?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 		</div>
 		<div class="block-services__tabs">
 			<div>

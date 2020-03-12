@@ -48,7 +48,7 @@
 		border-radius: 14px;
 
 		@include media-breakpoint-up(lg) {
-			min-width: 362px;
+			width: 362px;
 			margin-right: 0;
 			margin-left: 0;
 		}
