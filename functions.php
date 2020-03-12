@@ -161,6 +161,30 @@ class Gbomotors {
 			'category'          => $this->theme_name,
 		));
 	}
+
+	static function get_template_part($slug, $name = null, $data = []) {
+		// here we're copying more of what get_template_part is doing.
+		$templates = [];
+		$name = (string) $name;
+
+		if ('' !== $name) {
+			$templates[] = "{$slug}-{$name}.php";
+		}
+
+		$templates[] = "{$slug}.php";
+
+		$template = locate_template($templates, false);
+
+		if (!$template) {
+			return;
+		}
+
+		if ($data) {
+			extract($data);
+		}
+
+		include($template);
+	}
 }
 
 new Gbomotors();

@@ -12,28 +12,30 @@
 	}
 
 	&__top-item {
-		font-family: "ProximaNova", sans-serif;
-		font-size: 15px;
-		line-height: 1.2;
-		font-weight: 300;
-		color: #c1b899;
-		text-decoration: none;
-
 		&:not(:last-of-type) {
 			margin-right: 30px;
 		}
 
-		.icon {
-			vertical-align: middle;
-		}
+		a {
+			font-family: "ProximaNova", sans-serif;
+			font-size: 15px;
+			line-height: 1.2;
+			font-weight: 300;
+			color: #c1b899;
+			text-decoration: none;
 
-		span {
-			text-decoration: underline;
-		}
+			.icon {
+				vertical-align: middle;
+			}
 
-		&:hover {
 			span {
-				text-decoration: none;
+				text-decoration: underline;
+			}
+
+			&:hover {
+				span {
+					text-decoration: none;
+				}
 			}
 		}
 	}

@@ -7,6 +7,8 @@
  * @package Gbomotors
  */
 
+$shortcode = '[contact-form-7 id="335" title="Оставить отзыв"]';
+
 get_header();
 ?>
 
@@ -20,7 +22,10 @@ get_header();
 					<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					?>
-					<button type="button" class="site-button"><?php _e('Написать отзыв', 'gbomotors'); ?></button>
+					<div x-data="{ open: false }">
+						<button @click="open = true" type="button" class="site-button"><?php _e('Написать отзыв', 'gbomotors'); ?></button>
+						<?php include( locate_template( 'template-parts/components/modal.php', false, false ) );  ?>
+					</div>
 				</header><!-- .page-header -->
 				<div class="row">
 					<?php

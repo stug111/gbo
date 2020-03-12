@@ -53,7 +53,11 @@
 					<div class="footer__feedback">
 						<div class="d-flex flex-column align-items-start flex-lg-row">
 							<button class="footer__order footer__button"><?php _e('Оформить заявку', 'gbomotors') ?></button>
-							<button class="footer__button"><?php _e('Заказать звонок', 'gbomotors') ?></button>
+							<div x-data="{ open: false }">
+								<?php $shortcode = '[contact-form-7 id="337" title="Заказать звонок (шапка/футер)"]'; ?>
+								<button @click.prevent="open = true" class="footer__button"><?php _e('Заказать звонок', 'gbomotors') ?></button>
+								<?php include( locate_template( 'template-parts/components/modal.php', false, false ) );  ?>
+							</div>
 						</div>
 						<div class="footer__social">
 							<?php if ( get_theme_mod( 'gbomotors_vk' ) ) : ?>
