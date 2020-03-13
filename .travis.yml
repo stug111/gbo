@@ -1,0 +1,36 @@
+cache:
+  directories:
+    - node_modules
+
+language:
+  - php
+  - node_js
+
+os: linux
+version: ~> 1.0
+
+node_js:
+  - "10"
+
+before_install:
+  - npm install
+
+jobs:
+  include:
+    - stage: "Release"
+      name: Release build
+      if: branch = develop
+      script:
+        - git clone -b master https://github.com/stug111/gbomotors.git old-version
+        - node deploy/update-version.js
+        - rm -rf old-version
+        - npm run build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_OAUTH_TOKEN
+        target_branch: master
+        on:
+          branch: develop
+
+  fast_finish: true

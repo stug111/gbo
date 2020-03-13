@@ -1,0 +1,36 @@
+@import "./variables.scss";
+@import "./mixins/index.scss";
+@import "./fonts.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities/_text.scss";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "./global.scss";
+@import "./blocks/index.scss";
+@import "./blocks/components/**/frontend.scss";
+
+.home {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 0;
+	}
+}
+
+.wp-block-gallery {
+	.blocks-gallery-item {
+		margin-bottom: 20px;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 40px;
+		}
+
+		figure {
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

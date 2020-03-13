@@ -1,0 +1,108 @@
+.block-review {
+	&__item {
+		.archive & {
+			margin-bottom: 33px;
+
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 47px;
+			}
+		}
+	}
+
+	&__header {
+		margin-bottom: 11px;
+		border-bottom: solid 2px #ffc400;
+	}
+
+	&__name {
+		margin-bottom: 9px;
+		font-family: "PragmaticaSlab", sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		color: #000000;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 18px;
+		}
+	}
+
+	&__model-car {
+		margin-bottom: 13px;
+		font-family: "PragmaticaSlab", sans-serif;
+		font-size: 12px;
+		font-weight: 300;
+		color: #000000;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 14px;
+		}
+	}
+
+	&__excerpt {
+		min-height: 168px;
+		font-family: "ProximaNova", sans-serif;
+		font-size: 19px;
+		line-height: 1.32;
+		font-weight: 300;
+		color: #000000;
+	}
+
+	.slick-dots {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		margin-top: 19px;
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin-right: 4px;
+			margin-left: 4px;
+		}
+
+		button {
+			width: 15px;
+			height: 15px;
+			padding: 0;
+			background-color: transparent;
+			border: solid 2px #1e485b;
+			border-radius: 50%;
+			font-size: 0;
+
+			&[aria-selected="true"],
+			&:hover {
+				background-color: #ffc400;
+			}
+		}
+	}
+
+	.slick-slide {
+		margin: 0 15px;
+	}
+
+	.slick-list {
+		margin: 0 -15px;
+	}
+
+	&__button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 201px;
+		height: 35px;
+		margin-top: 46px;
+		background-color: #ffc400;
+		font-family: "ProximaNova", sans-serif;
+		font-size: 16px;
+		font-size: 13px;
+		line-height: 2.62;
+		font-weight: 300;
+
+		@include media-breakpoint-up(lg) {
+			width: 242px;
+			height: 42px;
+			margin-top: 27px;
+			color: #000000;
+		}
+	}
+}
