@@ -92,6 +92,22 @@
 		</div>
 	</footer>
 
+	<div id="orderSlider" class="modal d-none">
+		<div class="modal__overlay"></div>
+		<div class="modal__block" >
+			<button class="modal__close"><svg xmlns="http://www.w3.org/2000/svg" width="26.163" height="26.163" viewBox="0 0 26.163 26.163"><g data-name="Group 49" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"><path data-name="Line 68" d="M2.828 2.829l20.506 20.506"/><path data-name="Line 141" d="M2.828 23.335L23.334 2.829"/></g></svg></button>
+			<?php echo do_shortcode('[contact-form-7 id="128" title="Заявка на установку"]'); ?>
+		</div>
+	</div>
+
+	<div id="orderSale" class="modal d-none">
+		<div class="modal__overlay"></div>
+		<div class="modal__block" >
+			<button class="modal__close"><svg xmlns="http://www.w3.org/2000/svg" width="26.163" height="26.163" viewBox="0 0 26.163 26.163"><g data-name="Group 49" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"><path data-name="Line 68" d="M2.828 2.829l20.506 20.506"/><path data-name="Line 141" d="M2.828 23.335L23.334 2.829"/></g></svg></button>
+			<?php echo do_shortcode('[contact-form-7 id="342" title="Получить скидку"]'); ?>
+		</div>
+	</div>
+
 <?php wp_footer(); ?>
 
 </body>

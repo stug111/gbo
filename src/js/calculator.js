@@ -28,3 +28,39 @@ function calculator() {
 		}, // окупаемость ГБО по пробегу в км
 	}
 }
+
+function openModalOrder() {
+	jQuery("#orderSlider")
+		.toggleClass("d-none")
+		.toggleClass("d-flex")
+}
+
+jQuery("#orderSlider .modal__overlay").on("click", function() {
+	jQuery("#orderSlider")
+		.toggleClass("d-none")
+		.toggleClass("d-flex")
+})
+
+jQuery("#orderSlider .modal__close").on("click", function() {
+	jQuery("#orderSlider")
+		.toggleClass("d-none")
+		.toggleClass("d-flex")
+})
+
+function openModalSale() {
+	jQuery("#orderSale")
+		.toggleClass("d-none")
+		.toggleClass("d-flex")
+}
+
+jQuery("#orderSale .modal__overlay").on("click", function() {
+	jQuery("#orderSale")
+		.toggleClass("d-none")
+		.toggleClass("d-flex")
+})
+
+jQuery("#orderSale .modal__close").on("click", function() {
+	jQuery("#orderSale")
+		.toggleClass("d-none")
+		.toggleClass("d-flex")
+})

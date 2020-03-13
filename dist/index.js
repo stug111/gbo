@@ -127,18 +127,7 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPAC
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_reviews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/reviews */ \"./src/js/reviews.js\");\n/* harmony import */ var _js_home_price__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/home-price */ \"./src/js/home-price.js\");\n/* harmony import */ var _js_calculator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/calculator */ \"./src/js/calculator.js\");\n/* harmony import */ var _js_calculator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_calculator__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/alpine.js\");\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(alpinejs__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/calculator.js":
-/*!******************************!*\
-  !*** ./src/js/calculator.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function calculator() {\n  return {\n    r: 10,\n    // расход топлива\n    p: 1000,\n    // пробег в месяц\n    benz: 45,\n    // стоимость бензина\n    gaz: 20,\n    // стоимость газа\n    stoimostgbo: 20000,\n    // стоимость ГБО\n    g: function g() {\n      return this.p * 12;\n    },\n    // пробег в год\n    cbg: function cbg() {\n      return this.benz * this.r / 100 * this.g();\n    },\n    // стоимость бензина в год\n    cgg: function cgg() {\n      return this.gaz * this.r / 100 * this.g();\n    },\n    // стоимость газа в год\n    econgod: function econgod() {\n      var price = this.cbg() - this.cgg();\n      return \"\".concat(+price.toFixed(2), \" \\u20BD\");\n    },\n    // экономия в год\n    econmes: function econmes() {\n      var price = this.econgod() / 12;\n      return \"\".concat(+price.toFixed(2), \" \\u20BD\");\n    },\n    // экономия в месяц\n    ocup: function ocup() {\n      var price = this.stoimostgbo / (this.benz * this.r / 100 - this.gaz * this.r / 100);\n      return \"\".concat(+price.toFixed(2), \" \\u043A\\u043C\");\n    } // окупаемость ГБО по пробегу в км\n\n  };\n}\n\n//# sourceURL=webpack:///./src/js/calculator.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_reviews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/reviews */ \"./src/js/reviews.js\");\n/* harmony import */ var _js_home_price__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/home-price */ \"./src/js/home-price.js\");\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! alpinejs */ \"./node_modules/alpinejs/dist/alpine.js\");\n/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(alpinejs__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
