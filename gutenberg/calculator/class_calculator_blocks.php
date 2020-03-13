@@ -16,7 +16,15 @@ class Block_Calculator {
 
 		ob_start();
 			?>
-			<div class="calculator" x-data="calculator()">
+			<div class="calculator" x-data="{
+											r: <?php echo esc_attr( get_option( 'fuel_consumption_rate' ) ); ?>,
+											p: <?php echo esc_attr( get_option( 'mileage_per_month' ) ); ?>,
+											benz: <?php echo esc_attr( get_option( 'ai-92' ) ); ?>,
+											benz95: <?php echo esc_attr( get_option( 'ai-95' ) ); ?>,
+											stateBenz: <?php echo esc_attr( get_option( 'ai-92' ) ); ?>,
+											gaz: <?php echo esc_attr( get_option( 'gaz' ) ); ?>,
+											stoimostgbo: <?php echo esc_attr( get_option( 'gbo' ) ); ?>,
+											isAi95: false, ...calculator()}">
 				<div class="container">
 					<div class="row justify-content-lg-center">
 						<div class="col-lg-7 order-1 calculator__description">
@@ -181,10 +189,18 @@ class Block_Calculator {
 								<div class="calculator__item-info">
 									<div class="calculator__item-value">
 										<div class="form-field">
-											<input type="number" x-model="benz">
+											<input type="number" x-model="stateBenz">
 										</div>
 									</div>
 									<div class="calculator__item-label">
+										<div class="form-checkbox">
+											<input type="checkbox" name="ai" id="ai" x-bind:checked="isAi95" @click="changeBenz()">
+											<label for="ai">
+												<span>АИ-92</span>
+												<span></span>
+												<span>АИ-95</span>
+											</label>
+										</div>
 										<div class="form-field">
 											<label for="">средняя стоимость </br> бензина в Чебоксарах</label>
 										</div>
@@ -221,9 +237,8 @@ class Block_Calculator {
 						<div class="col-lg-8 col-5 order-5 text-right text-lg-left">
 							<div class="row">
 								<div class="col-lg-4">
-									<div class="calculator__finish-title">Расход топлива</div>
-									<div class="calculator__finish-price">
-										2490 ₽
+									<div class="calculator__finish-title">Экономия в месяц</div>
+									<div class="calculator__finish-price" x-text="econmes()">
 									</div>
 								</div>
 								<div class="col-lg-4">

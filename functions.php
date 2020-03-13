@@ -29,6 +29,8 @@ class Gbomotors {
 			add_action('acf/init', array( $this, 'register_acf_block_types' ));
 		}
 		add_action( 'init', array( $this, 'unregister_post_type' ) );
+		add_action( 'admin_init', array( $this, 'settings_api_init' ) );
+		add_action( 'init', array( $this, 'register_settings' ) );
 
 		add_filter( 'wpcf7_autop_or_not', '__return_false' );
 		add_filter( 'get_the_archive_title', function( $title ){
@@ -190,6 +192,66 @@ class Gbomotors {
 	public function unregister_post_type() {
 		// unregister_post_type( 'post' );
 	}
+
+	public function settings_api_init() {
+		add_settings_section(
+			'calculator',
+			'Калькулятор',
+			// In class context pass an array with $this and the method name
+			// to retrieve callback function.
+			array(),
+			// Our Socials setting will be set under the General tab.
+			'general'
+		);
+
+		$this->add_setting_field('fuel_consumption_rate', 'Расход топлива', 10);
+		$this->add_setting_field('mileage_per_month', 'Пробег в месяц', 1000);
+		$this->add_setting_field('ai-92', 'Cтоимость бензина АИ-92', 45);
+		$this->add_setting_field('ai-95', 'Cтоимость бензина АИ-95', 44);
+		$this->add_setting_field('gaz', 'Cтоимость ГАЗ', 20);
+		$this->add_setting_field('gbo', 'Cтоимость ГБО', 20000);
+	}
+
+	public function setting_callback_function( $args ) {
+		echo '<input name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['name'] ) . '" type="text" value="' . esc_attr( get_option( $args['name'] ) ) . '" class="regular-text code" />';
+	}
+
+	public function register_settings() {
+
+		$args = array(
+			'type'              => 'string',
+			'sanitize_callback' => 'sanitize_text_field',
+			'default'           => null,
+			'show_in_graphql'   => true,
+			'show_in_rest'      => true,
+		);
+
+		register_setting( 'general', 'fuel_consumption_rate', $args );
+		register_setting( 'general', 'mileage_per_month', $args );
+		register_setting( 'general', 'ai-92', $args );
+		register_setting( 'general', 'ai-95', $args );
+		register_setting( 'general', 'gaz', $args );
+		register_setting( 'general', 'gbo', $args );
+	}
+
+	public function add_setting_field($id, $name, $value) {
+		add_settings_field(
+			$id,
+			$name,
+			array( $this, 'setting_callback_function' ),
+			'general',
+			// Display this setting under our newly declared section right
+			// above.
+			'calculator',
+			// Extra arguments used in callback function.
+			array(
+				'name'  => $id,
+				'label' => $name
+			)
+		);
+	}
+
+
 }
 
 new Gbomotors();
