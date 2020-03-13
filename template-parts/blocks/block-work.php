@@ -71,8 +71,10 @@ $econom = get_field('econom');
 					</div>
 				</div>
 			</div>
-			<div>
-				<button type="button" class="site-button block-work__button"><?php _e('Записаться на установку', 'gbomotors'); ?></button>
+			<div x-data="{ open: false }">
+				<?php $shortcode = '[contact-form-7 id="128" title="Заявка на установку"]'; ?>
+				<button @click.prevent="open = true" type="button" class="site-button block-work__button"><?php _e('Записаться на установку', 'gbomotors'); ?></button>
+				<?php include( locate_template( 'template-parts/components/modal.php', false, false ) );  ?>
 			</div>
 		</div>
 	</div>

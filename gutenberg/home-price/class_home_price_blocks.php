@@ -25,7 +25,7 @@ class Block_Home_Price {
 
 		ob_start();
 		?>
-			<div class="<?php echo esc_attr( $class ); ?>">
+			<div class="<?php echo esc_attr( $class ); ?>" x-data="{ openOrder: false, openRass: false }">
 				<div class="container">
 					<div class="home-price__carousel">
 						<?php foreach ( $recent_posts as $post ) : ?>
@@ -73,12 +73,26 @@ class Block_Home_Price {
 									</div>
 								</div>
 								<div class="home-price__footer">
-									<a class="home-price__footer-price" href="<?php echo get_field('price_link', $post->ID); ?>"><?php _e('Посмотреть полный прайс-лист', 'gbomotors'); ?></a>
-									<button class="home-price__footer-button"><?php _e('Оставить заявку', 'gbomotors'); ?></button>
-									<a class="home-price__footer-rass" href="<?php echo get_field('rass', $post->ID); ?>"><?php _e('Оформить рассрочку', 'gbomotors'); ?></a>
+									<a class="home-price__footer-price" href="<?php echo get_post_type_archive_link('services'); ?>"><?php _e('Посмотреть полный прайс-лист', 'gbomotors'); ?></a>
+									<button @click.prevent="openOrder = true" class="home-price__footer-button"><?php _e('Оставить заявку', 'gbomotors'); ?></button>
+									<a @click.prevent="openRass = true" class="home-price__footer-rass" href="#"><?php _e('Оформить рассрочку', 'gbomotors'); ?></a>
 								</div>
 							</div>
 						<?php endforeach; ?>
+					</div>
+				</div>
+				<div class="modal d-none" :class="{ 'd-flex': openOrder }" x-show="openOrder">
+					<div class="modal__overlay"></div>
+					<div class="modal__block" >
+						<button class="modal__close" @click="openOrder = false" @click.away="openOrder = false"><svg xmlns="http://www.w3.org/2000/svg" width="26.163" height="26.163" viewBox="0 0 26.163 26.163"><g data-name="Group 49" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"><path data-name="Line 68" d="M2.828 2.829l20.506 20.506"/><path data-name="Line 141" d="M2.828 23.335L23.334 2.829"/></g></svg></button>
+						<?php echo do_shortcode('[contact-form-7 id="340" title="Оформить заявку (футер)"]'); ?>
+					</div>
+				</div>
+				<div class="modal d-none" :class="{ 'd-flex': openRass }" x-show="openRass">
+					<div class="modal__overlay"></div>
+					<div class="modal__block" >
+						<button class="modal__close" @click="openRass = false" @click.away="openRass = false"><svg xmlns="http://www.w3.org/2000/svg" width="26.163" height="26.163" viewBox="0 0 26.163 26.163"><g data-name="Group 49" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"><path data-name="Line 68" d="M2.828 2.829l20.506 20.506"/><path data-name="Line 141" d="M2.828 23.335L23.334 2.829"/></g></svg></button>
+						<?php echo do_shortcode('[contact-form-7 id="341" title="Оформить рассрочку"]'); ?>
 					</div>
 				</div>
 			</div>

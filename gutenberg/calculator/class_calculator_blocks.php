@@ -245,8 +245,10 @@ class Block_Calculator {
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-12 text-center order-6">
-							<button type="button" class="calculator__button">Установить ГБО</button>
+						<div class="col-lg-12 text-center order-6" x-data="{ open: false }">
+							<?php $shortcode = '[contact-form-7 id="339" title="Установить ГБО (Калькулятор)"]'; ?>
+							<button @click.prevent="open = true" type="button" class="calculator__button">Установить ГБО</button>
+							<?php include( locate_template( 'template-parts/components/modal.php', false, false ) );  ?>
 						</div>
 					</div>
 				</div>

@@ -47,7 +47,15 @@
 		</div>
 	</div>
 	<div class="block-services__footer">
-		<button type="button" class="site-button"><?php _e('Оставить заявку', 'gbomotors'); ?></button>
-		<button type="button" class="block-services__link"><?php _e('Оформить рассрочку', 'gbomotors'); ?></button>
+		<div x-data="{ open: false }">
+			<?php $shortcode = '[contact-form-7 id="340" title="Оформить заявку (футер)"]'; ?>
+			<button @click.prevent="open = true" type="button" class="site-button"><?php _e('Оставить заявку', 'gbomotors'); ?></button>
+			<?php include( locate_template( 'template-parts/components/modal.php', false, false ) );  ?>
+		</div>
+		<div x-data="{ open: false }">
+			<?php $shortcode = '[contact-form-7 id="341" title="Оформить рассрочку"]'; ?>
+			<button @click.prevent="open = true" type="button" class="block-services__link"><?php _e('Оформить рассрочку', 'gbomotors'); ?></button>
+			<?php include( locate_template( 'template-parts/components/modal.php', false, false ) );  ?>
+		</div>
 	</div>
 </div>

@@ -28,6 +28,7 @@ class Gbomotors {
 		if( function_exists('acf_register_block_type') ) {
 			add_action('acf/init', array( $this, 'register_acf_block_types' ));
 		}
+		add_action( 'init', array( $this, 'unregister_post_type' ) );
 
 		add_filter( 'wpcf7_autop_or_not', '__return_false' );
 		add_filter( 'get_the_archive_title', function( $title ){
@@ -184,6 +185,10 @@ class Gbomotors {
 		}
 
 		include($template);
+	}
+
+	public function unregister_post_type() {
+		// unregister_post_type( 'post' );
 	}
 }
 

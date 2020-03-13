@@ -280,6 +280,7 @@
 		line-height: 2.27;
 		color: #000000;
 		text-decoration: underline;
+		cursor: pointer;
 
 		@include media-breakpoint-up(lg) {
 			margin-left: 36px;

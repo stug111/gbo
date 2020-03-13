@@ -235,6 +235,7 @@
 		font-weight: bold;
 		color: #000000;
 		text-shadow: 0 2px 1px rgba(255, 255, 255, 0.52);
+		cursor: pointer;
 
 		@include media-breakpoint-up(lg) {
 			width: 460px;
